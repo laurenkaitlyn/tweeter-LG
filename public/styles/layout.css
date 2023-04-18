@@ -25,3 +25,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: #dad4ef;
+  background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
+ 
+}
