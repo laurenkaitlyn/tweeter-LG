@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  margin-top: 120px;
+  height: 400px;
+  background-color: #dad4ef;
+background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
+
+}
+
+.profile-pic {
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-name {
+  display: flex;
+  justify-content: center;
+}
