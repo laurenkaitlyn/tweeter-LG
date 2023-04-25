@@ -29,6 +29,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-direction: column;
   padding-left: 5%;
   padding-right: 5%;
   background-color: #dad4ef;
