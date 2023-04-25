@@ -2,7 +2,7 @@
   display: inline-block;
   outline: 0;
   border: 0;
-  background-image: linear-gradient(to right,#dad4ef,#e6b7fd);
+  background-image: linear-gradient(to right,#93a4dd,#4056A1);
   cursor: pointer;
   border-radius: 2px;
   color: #fff;
@@ -18,7 +18,7 @@
 }
 
 .bttn:hover {
-  background-image: linear-gradient(to right,#93a4dd,#4056A1);
+  background-image: linear-gradient(to right,#dad4ef,#e6b7fd);
 }
 
 .new-tweet-text {
@@ -62,4 +62,13 @@ footer {
 
 .text-red {
   color: red;
+}
+
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 220px;
+  align-items: center;
+  
 }
