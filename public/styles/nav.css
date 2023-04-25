@@ -23,3 +23,7 @@ nav {
   display: flex;
   flex-direction: column;
  }
+
+ .Bungee-font {
+  font-family: 'Bungee';
+ }
