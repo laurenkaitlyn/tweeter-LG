@@ -29,6 +29,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Timeago -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
   </head>
 
   <body>
@@ -57,12 +60,12 @@
     <main class="container">
       <section class="new-tweet">
         <h2 class="compose-tweet">Compose Tweet</h2>
-        <form method="POST" action="/tweets/">
+        <form method="POST" action="/tweets/" id="tweet-text">
           <!--<label for="tweet-text"></label>-->
           <textarea name="text" id="tweet-text" class="new-tweet-text" placeholder="What are you humming about?"></textarea>
             <footer>
-              <button class="bttn" type="submit">Tweet</button>
-              <output class="counter" name="counter" for="tweet-text">140</output>
+              <button id="bttn" type="submit">Tweet</button>
+              <output class="counter" for="tweet-text">140</output>
             </footer>
         </form>
       </section>

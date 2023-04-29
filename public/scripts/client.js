@@ -1,46 +1,18 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 
 // Fake data taken from initial-tweets.json
+
 $(document).ready(function() {
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
   
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      console.log($tweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   }
   
   const createTweetElement = function(tweetData) {
+    let createdAt = timeago.format(tweetData.created_at);
+
     let $tweet = $(`
       <article class="tweet">
       <div class="tweet-header">
@@ -53,7 +25,7 @@ $(document).ready(function() {
       <p class="tweet-padding">${tweetData.content.text}</p>
       <hr>
     <footer>
-      <span class="tweet-padding">${tweetData.created_at}</span>
+      <span class="tweet-padding">${createdAt}</span>
       <div class="icons-style">
         <a href="#">
           <i class="icon-style fa-solid fa-retweet fa-hover-hidden"></i>
@@ -73,6 +45,38 @@ $(document).ready(function() {
   
     return $tweet;
   };
-  
-  renderTweets(data);
+
+  const loadTweets = function() {
+    $.ajax({
+      type: 'GET',
+      url: '/tweets',
+    }).then((result) => {
+      renderTweets(result);
+    }).catch((error) => {
+      console.log("ERROR: ", error.message);
+    })
+  }
+
+  loadTweets();
+
+
+
+  $("#tweet-text").submit(function(event) {
+    event.preventDefault();
+    // if ($("new-tweet-text").val().length > 140) {
+
+    // }
+    const data = $( this ).serialize();
+    console.log(data);
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: data,
+    }).then(() => {
+      loadTweets();
+    }).fail((error) => {
+      console.log("ERROR: ", error.message);
+    })
+  });
+
 });
