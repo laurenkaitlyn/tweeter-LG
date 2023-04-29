@@ -2,6 +2,12 @@
 // Fake data taken from initial-tweets.json
 
 $(document).ready(function() {
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   
   const renderTweets = function(tweets) {
     //prevents duplicate tweets when calling load tweets
@@ -15,6 +21,7 @@ $(document).ready(function() {
   
   const createTweetElement = function(tweetData) {
     let createdAt = timeago.format(tweetData.created_at);
+    const safeHTML = `${escape(tweetData.content.text)}`;
 
     let $tweet = $(`
       <article class="tweet">
@@ -25,7 +32,7 @@ $(document).ready(function() {
         </div>
         <h3 class="username">${tweetData.user.handle}</h3>
       </div>
-      <p class="tweet-padding">${tweetData.content.text}</p>
+      <p class="tweet-padding">${safeHTML}</p>
       <hr>
     <footer>
       <span class="tweet-padding">${createdAt}</span>
