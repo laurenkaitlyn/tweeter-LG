@@ -4,6 +4,9 @@
 $(document).ready(function() {
   
   const renderTweets = function(tweets) {
+    //prevents duplicate tweets when calling load tweets
+    $("#tweets-container").html(" ");
+
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('#tweets-container').prepend($tweet);
@@ -63,20 +66,25 @@ $(document).ready(function() {
 
   $("#tweet-text").submit(function(event) {
     event.preventDefault();
-    // if ($("new-tweet-text").val().length > 140) {
-
-    // }
-    const data = $( this ).serialize();
+    if ($(".new-tweet-text").val().length > 140) {
+      alert("You can't have more than 140 characters in your tweet!");
+    } else if ($(".new-tweet-text").val().length === 0) {
+      alert("You need to write something in your tweet")
+    } else {
+      const data = $( this ).serialize();
     console.log(data);
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: data,
     }).then(() => {
+      event.target.reset();
       loadTweets();
     }).fail((error) => {
       console.log("ERROR: ", error.message);
     })
+    }
+    
   });
 
 });
