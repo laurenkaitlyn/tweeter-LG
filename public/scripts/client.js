@@ -73,10 +73,15 @@ $(document).ready(function() {
 
   $("#tweet-text").submit(function(event) {
     event.preventDefault();
+    $("#empty").slideUp();
+    $("#long-error").slideUp();
+
     if ($(".new-tweet-text").val().length > 140) {
-      alert("You can't have more than 140 characters in your tweet!");
+      $("#long-error").slideDown();
+      return;
     } else if ($(".new-tweet-text").val().length === 0) {
-      alert("You need to write something in your tweet")
+      $("#empty").slideDown();
+      return;
     } else {
       const data = $( this ).serialize();
     console.log(data);
