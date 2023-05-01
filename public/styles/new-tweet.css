@@ -1,4 +1,4 @@
-.bttn {
+#bttn {
   display: inline-block;
   outline: 0;
   border: 0;
@@ -14,28 +14,26 @@
   line-height: 36px;
   padding: 0 10px;
   font-size: 14px;
-  
 }
 
-.bttn:hover {
+#bttn:hover {
   background-image: linear-gradient(to right,#dad4ef,#e6b7fd);
 }
 
 .new-tweet-text {
   color: rgba(0,0,0,.87);
-  border-bottom-color: rgba(0,0,0,.42);
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: .009375em;
   text-decoration: inherit;
   text-transform: inherit;
-  align-self: flex-end;
   box-sizing:border-box;
-  width: 30em;
+  min-width: 80vw;
+  max-width: 90vw;
   padding: 20px 16px 6px;
   transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
-  border-bottom: 1px solid;
+  border-bottom: 1.5px solid rgba(0,0,0,.87);
   border-radius: 4px 4px 0 0;
   background:transparent;
   height: 56px;
@@ -55,9 +53,20 @@ footer {
   justify-content: space-between;
 }
 
-.compose-tweet {
-  display: flex;
-  justify-content: center;
+.counter {
+  color:#4056A1;
+}
+
+.error {
+  display: none;
+  color: white;
+  margin-inline: 3rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border:rgb(180, 76, 76) solid 2px;
+  background-color: rgb(180, 76, 76);
+  min-height: 4rem;
+  text-align: center;
 }
 
 .text-red {
@@ -71,4 +80,11 @@ footer {
   height: 220px;
   align-items: center;
   
+}
+
+@media only screen and (min-width: 1024px) {
+  .new-tweet-text {
+    min-width: 50vw;
+    max-width: 55vw;
+  }
 }

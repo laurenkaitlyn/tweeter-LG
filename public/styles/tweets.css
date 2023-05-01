@@ -1,12 +1,21 @@
-article {
+section#tweets-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tweet {
   margin-top: 2em;
   margin-bottom: 1em;
-  margin-right: 5em;
-  margin-left: 5em;
+  margin-right: 1em;
+  margin-left: 1em;
   height: 11em;
   background: white;
   border: solid 3px #545149;
+  min-width: 80vw;
+  max-width: 90vw;
 }
+
 
 article:hover {
   box-shadow: 5px 10px #545149;
@@ -33,8 +42,16 @@ hr {
   font-weight: 100;
 }
 
+.other-profile-pic {
+  height: 60px;
+  padding-left: 1em;
+  padding-top: 1em;
+  padding-right: 0.5em;
+}
+
 .tweet-padding {
   padding-left: 1em;
+  padding-right: 1em;
 }
 
 .icons-style {
@@ -44,9 +61,8 @@ hr {
 }
 
 .icon-style {
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-
+  padding-left:0.5em;
+  padding-right:0.5em;
 }
 
 .fa-solid.fa-hover-hidden {
@@ -65,3 +81,11 @@ hr {
     display: inline-block;
 }
 
+@media only screen and (min-width: 1024px) {
+  .tweet {
+    min-width: 50vw;
+    max-width: 55vw;
+  }
+
+
+}

@@ -32,7 +32,20 @@ body {
   flex-direction: column;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: #dad4ef;
+  background-color: #e6dfff;
   background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
  
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    background-color: #e6dfff;
+    background-image: url("https://www.transparenttextures.com/patterns/escheresque.png");
+  }
+
+  .container {
+    width: 60%;
+    float: right;
+    padding-top: 6em;
+  }
 }
