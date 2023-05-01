@@ -52,20 +52,24 @@
       </div>
       <br>
       <div class="profile-name">
-          <h2>Lauren Greasley</h2>
+          <p> <b>Lauren</b> Greasley</p>
       </div>
   </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div class="tweetdata">
+        <p id="empty" class="error">You can't leave the tweet blank</p>
+        <div id="long-error" class="error">
+          <p>Reduce your character count</p>
+        </div>
       <section class="new-tweet">
-        <h2 class="compose-tweet">Compose Tweet</h2>
         <form method="POST" action="/tweets/" id="tweet-text">
           <!--<label for="tweet-text"></label>-->
           <textarea name="text" id="tweet-text" class="new-tweet-text" placeholder="What are you humming about?"></textarea>
             <footer>
               <button id="bttn" type="submit">Tweet</button>
-              <output class="counter" for="tweet-text">140</output>
+              <output class="counter Bungee-font" for="tweet-text">140</output>
             </footer>
         </form>
       </section>
