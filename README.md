@@ -20,7 +20,7 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
-Test out the tweet function by entering your tweet in the text box and clicking the 'tweet' button. You cannot tweet an empty if nothing has been input into the textbox OR isf it is above the 140 character count.
+Test out the tweet function by entering your tweet in the text box and clicking the 'tweet' button. You cannot tweet if nothing has been input into the textbox OR if it is above the 140 character count.
 
 The new tweet will appear at the top.
 
